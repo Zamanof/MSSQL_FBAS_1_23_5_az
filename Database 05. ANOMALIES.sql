@@ -1,0 +1,4 @@
+-- Anomalies
+-- INSERT Anomalies
+-- UPDATE Anomalies
+-- DELETE Anomalies
