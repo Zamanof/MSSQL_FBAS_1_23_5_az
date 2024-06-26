@@ -53,6 +53,8 @@ DROP CONSTRAINT const_name
 
 */
 
+
+
 USE [master]
 
 GO
@@ -95,7 +97,8 @@ CONSTRAINT FK_Posts_User FOREIGN KEY(IdUser) REFERENCES Users(Id)
 
 GO
 
-CREATE TABLE Tags(
+CREATE TABLE Tags
+(
 Id int IDENTITY(1,1) NOT NULL,
 Tag nvarchar(100) NOT NULL,
 CONSTRAINT PK_Tags PRIMARY KEY(Id),
