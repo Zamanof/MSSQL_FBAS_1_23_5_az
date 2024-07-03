@@ -18,15 +18,15 @@ USE [Library]
 
 GO
 
---CREATE TABLE MyLogs(
---Id int PRIMARY KEY IDENTITY(1, 1),
---LoginName nvarchar(50) NOT NULL,
---PostDate datetime2 NOT NULL,
---EventType nvarchar(50) NOT NULL,
---ObjectName nvarchar(50) NULL,
---ObjectType nvarchar(50) NULL,
---CommandText nvarchar(MAX) NULL
---)
+CREATE TABLE MyLogs(
+Id int PRIMARY KEY IDENTITY(1, 1),
+LoginName nvarchar(50) NOT NULL,
+PostDate datetime2 NOT NULL,
+EventType nvarchar(50) NOT NULL,
+ObjectName nvarchar(50) NULL,
+ObjectType nvarchar(50) NULL,
+CommandText nvarchar(MAX) NULL
+)
 
 --CREATE TRIGGER DB_Action
 --ON DATABASE
@@ -89,4 +89,11 @@ GO
 --	VALUES (ORIGINAL_LOGIN(), SYSDATETIME(), N'LOGON')
 --END
 
---DROP TRIGGER DB_LogOn ON ALL SERVER
+
+-- https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-utility?view=sql-server-ver16&tabs=go%2Cwindows&pivots=cs1-cmd
+
+-- sqlcmd -S <server_name> -U <user_name> -P <user_pass> -A
+
+-- DISABLE TRIGGER DB_LogOn ON ALL SERVER
+
+-- DROP TRIGGER DB_LogOn ON ALL SERVER
